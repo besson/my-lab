@@ -1,13 +1,23 @@
 <html>
   <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="assets/js/lib/underscore-min.js"></script>
     <script src="assets/js/lib/backbone-min.js"></script>
     <script src="assets/js/app/all.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   </head>
   <body>
     <h1>Find tweets</h1><hr>
     <input type="text" id="search-key" />
     <button id="seach-submit">go</button>
+    <ul id="tweets"> </ul>
+    <script>
+      $(function() {
+        // Example
+        var tweet = new window.Tweet();
+        tweet.set({text: "first tweet"});
+        var tweetView = new window.TweetView({model: tweet});
+        tweetView.render();
+      });
+    </script>
   </body>
 </html>

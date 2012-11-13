@@ -11,5 +11,13 @@
     }
   });
 
+  window.TweetView = Backbone.View.extend({
+    el: $("#tweets"),
+    render: function(){
+     var content = "<li>" + this.model.get("text") + "</li>";
+    $("#tweets").append(content);
+    }
+  });
+
 }());
 
