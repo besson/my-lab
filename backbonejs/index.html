@@ -9,14 +9,16 @@
     <h1>Find tweets</h1><hr>
     <input type="text" id="search-key" />
     <button id="seach-submit">go</button>
-    <ul id="tweets"> </ul>
+    <div id="tweets-container">
+      <ul id="tweets"> </ul>
+    </div>
     <script>
       $(function() {
-        // Example
-        var tweet = new window.Tweet();
-        tweet.set({text: "first tweet"});
-        var tweetView = new window.TweetView({model: tweet});
-        tweetView.render();
+        var tweetList = new window.TweetList();
+        tweetList.fetch();
+
+        var tweetListView = new window.TweetListView({collection: tweetList});
+        tweetListView.render();
       });
     </script>
   </body>
