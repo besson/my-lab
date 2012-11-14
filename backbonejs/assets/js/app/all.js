@@ -5,9 +5,12 @@
 
   window.TweetList = Backbone.Collection.extend({
     model: window.Tweet,
-    url: "http://search.twitter.com/search.json?callback=?&q=corinthians",
+    url: "http://search.twitter.com/search.json?callback=?&q=curintia",
     parse: function(response) {
       return response.results;
+    },
+    getTweets: function(searchKey) {
+      this.url = "http://search.twitter.com/search.json?callback=?&q=" + searchKey
     }
   });
 
@@ -28,7 +31,6 @@
     },
 
     addOne: function(tweet){
-     alert(tweet);
      var tweetView = new window.TweetView({model: tweet});
      tweetView.render();
     }

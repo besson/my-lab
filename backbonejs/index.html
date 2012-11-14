@@ -8,17 +8,20 @@
   <body>
     <h1>Find tweets</h1><hr>
     <input type="text" id="search-key" />
-    <button id="seach-submit">go</button>
+    <input type="submit" id="seach-submit" value="go" />
     <div id="tweets-container">
       <ul id="tweets"> </ul>
     </div>
     <script>
       $(function() {
         var tweetList = new window.TweetList();
-        tweetList.fetch();
+        tweetList.fetch({
+          success: function() {
+            var tweetListView = new window.TweetListView({collection: tweetList});
+            tweetListView.render();
+        }});
 
-        var tweetListView = new window.TweetListView({collection: tweetList});
-        tweetListView.render();
+
       });
     </script>
   </body>
