@@ -7,21 +7,28 @@
   </head>
   <body>
     <h1>Find tweets</h1><hr>
-    <input type="text" id="search-key" />
-    <input type="submit" id="seach-submit" value="go" />
+
+    <form action="#" method="POST">
+      <input type="text" id="search-key" />
+      <input type="submit" id="search-submit" value="go" />
+    </form>
+
     <div id="tweets-container">
       <ul id="tweets"> </ul>
     </div>
     <script>
       $(function() {
         var tweetList = new window.TweetList();
-        tweetList.fetch({
-          success: function() {
-            var tweetListView = new window.TweetListView({collection: tweetList});
-            tweetListView.render();
-        }});
 
-
+        $("#search-submit").click(function(e) {
+          e.preventDefault();
+          tweetList.getTweets($("#search-key").val());
+          tweetList.fetch({
+            success: function() {
+              var tweetListView = new window.TweetListView({collection: tweetList});
+              tweetListView.render();
+          }});
+        });
       });
     </script>
   </body>

@@ -19,7 +19,7 @@
 
     render: function(){
      var content = "<li>" + this.model.get("text") + "</li>";
-    $("#tweets").append(content);
+      $("#tweets").append(content);
     }
   });
 
@@ -27,6 +27,7 @@
     el: $("#tweets-container"),
 
     render: function(){
+      $("#tweets").html("");
       this.collection.each(this.addOne, this);
     },
 
