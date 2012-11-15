@@ -5,7 +5,6 @@
 
   window.TweetList = Backbone.Collection.extend({
     model: window.Tweet,
-    url: "http://search.twitter.com/search.json?callback=?&q=curintia",
     parse: function(response) {
       return response.results;
     },
@@ -25,6 +24,10 @@
 
   window.TweetListView = Backbone.View.extend({
     el: $("#tweets-container"),
+
+    initialize: function(){
+      this.collection.bind("reset", this.render, this);
+    },
 
     render: function(){
       $("#tweets").html("");
