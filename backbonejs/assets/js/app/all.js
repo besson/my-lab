@@ -26,7 +26,7 @@
     el: $("#tweets-container"),
 
     initialize: function(){
-      this.collection.bind("reset", this.render, this);
+      this.collection.on("reset", this.render, this);
     },
 
     render: function(){
