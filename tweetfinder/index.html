@@ -18,19 +18,9 @@
     </div>
     <script>
       $(function() {
-        var tweetList = new window.TweetList();
-        var tweetListView = new window.TweetListView({collection: tweetList});
-
-        $("#search-submit").click(function(e) {
-          e.preventDefault();
-          tweetList.getTweets($("#search-key").val());
-          tweetList.fetch({
-            success: function() {
-              tweetListView.render();
-          }});
-        });
-            setInterval(function() {tweetList.fetch();}, 4000);
-        });
+        var tweetFinder = new app.view.TweetFinder();
+        tweetFinder.render();
+      });
     </script>
   </body>
 </html>
