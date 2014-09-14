@@ -9,5 +9,6 @@ class TestUrlCrawler:
         mock_client = HttpClient()
         mock_client.request = MagicMock()
         url = "http://fbesson.wordpress.com"
+        #import pdb; pdb.set_trace()
         UrlCrawler(mock_client).run(url)
         mock_client.request.assert_called_with(url)
