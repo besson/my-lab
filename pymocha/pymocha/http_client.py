@@ -1,4 +1,10 @@
+import httplib
+
+
 class HttpClient:
 
     def request(self, url):
-        print "calling url : %s" % url
+        conn = httplib.HTTPConnection(url)
+        conn.request("GET", "/")
+
+        return conn.getresponse().status
