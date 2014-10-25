@@ -1,4 +1,5 @@
 my-lab
 ======
 
-A project to practice technologies that I've just learned 
+This project is my sandbox, here I add simple pocs, technologies I learned and also 
+algorithms I am practicing.
