@@ -4,35 +4,33 @@ class QuickSort:
         self._array = array
 
     def sort(self):
-        self._sort(0, self._array)
+        self._sort(self._array, 0, len(self._array) - 1)
         return self._array
 
-    def _sort(self, start, array):
-        if (len(array) <= 1):
-            return array
+    def _sort(self, array, start, end):
+        if start < end:
+            p = self.partition(array, start, end)
+            self._sort(array, start, p - 1)
+            self._sort(array, p + 1, end)
 
-        p = self.partition(start, len(array) - 1)
-        self._sort(start, array[start:p -1])
-        self._sort(p + 1, array[p + 1:len(array)])
-
-    def partition(self, i, j):
+    def partition(self, array, i, j):
         pos = i
         i = i + 1
 
         while (i <= j):
-            if (self._array[i] < self._array[pos]):
+            if (array[i] < array[pos]):
                 i = i + 1
-            elif (self._array[j] > self._array[pos]):
+            elif (array[j] > array[pos]):
                 j = j - 1
             else:
-                temp = self._array[i]
-                self._array[i] = self._array[j]
-                self._array[j] = temp
+                temp = array[i]
+                array[i] = array[j]
+                array[j] = temp
                 i = i + 1
                 j = j - 1
 
-        pivot = self._array[pos]
-        self._array[pos] = self._array[i - 1]
-        self._array[i - 1] = pivot
+        pivot = array[pos]
+        array[pos] = array[i - 1]
+        array[i - 1] = pivot
 
         return i - 1
