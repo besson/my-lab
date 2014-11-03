@@ -1,3 +1,0 @@
-def count(a):
-	
-	return {}
