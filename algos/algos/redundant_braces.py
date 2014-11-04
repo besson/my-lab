@@ -1,0 +1,1 @@
+def has_has_redundant_braces(expression)
