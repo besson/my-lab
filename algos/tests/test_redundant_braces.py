@@ -1,7 +1,7 @@
 from unittest import TestCase
 from algos.redundant_braces import has_redundant_braces
 
-class TestRedundantBraces:
+class TestRedundantBraces(TestCase):
 
 	def test_should_detect_redundant_braces(self):
 		a = "((a+b))"
@@ -10,3 +10,8 @@ class TestRedundantBraces:
 	def test_should_not_detect_redundant_braces(self):
 		a = "(a+(b+c))"
 		self.assertFalse(has_redundant_braces(a))
+
+	def test_should_detect_inner_redundant_braces(self):
+		a = "(a+((b+c)))"
+		self.assertTrue(has_redundant_braces(a))
+
