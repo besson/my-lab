@@ -3,14 +3,14 @@ from algos.fibonacci_sum import FibonacciSum
 
 class TestFibonacciSum(TestCase):
 
-	def setUp(self):
-		self._fibonacci = FibonacciSum()
-
 	def test_return_2_numbers_as_minimum(self):
-		self.assertEquals(2, self._fibonacci.count(7))
+		fibonacci = FibonacciSum(7)
+		self.assertEquals(2, fibonacci.count())
 
 	def test_return_3_numbers_as_minimum(self):
-		self.assertEquals(3, self._fibonacci.count(70))
+		fibonacci = FibonacciSum(70)
+		self.assertEquals(3, fibonacci.count())
 
 	def test_return_1_numbers_as_minimum(self):
-		self.assertEquals(1, self._fibonacci.count(8))
+		fibonacci = FibonacciSum(8)
+		self.assertEquals(1, fibonacci.count())
