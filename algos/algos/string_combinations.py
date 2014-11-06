@@ -1,3 +1,5 @@
+# Print all string combinations
+
 class Node:
 
 	def __init__(self, key):
@@ -25,17 +27,15 @@ class StringCombinations:
 
 	def __init__(self, _input):
 		self._result = []
-		self._roots = _input[0]
+		self._roots = _input.pop(0)
 		self._input = _input
 
 
 	def print_all(self):
 		for key in self._roots:
-			_input = self._input
+			_input = [i for i in self._input]
 			tree = self._build_tree(Node(key), _input)
 			self._print_tree(tree, key)
-
-		print self._result
 
 		return self._result
 
@@ -50,17 +50,12 @@ class StringCombinations:
 		if (len(_input) == 0):
 			return node
 
-		keys = _input.pop(0)
+		keys = _input[0]
 
-		right = self._build_tree(Node(keys[0]), _input)
-		left = self._build_tree(Node(keys[1]), _input)
+		right = self._build_tree(Node(keys[0]), _input[1:len(_input) + 1])
+		left = self._build_tree(Node(keys[1]), _input[1:len(_input) + 1])
 
 		node.add_right(right)
 		node.add_left(left)
 
 		return node
-
-
-
-
-
