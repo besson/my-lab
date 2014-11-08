@@ -1,4 +1,4 @@
-from unittes import TestCase
+from unittest import TestCase
 from algos.array_matching import ArrayMatching
 
 class TestArrayMatching(TestCase):
