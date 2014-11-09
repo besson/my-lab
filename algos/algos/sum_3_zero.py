@@ -1,3 +1,5 @@
+# Given an array find any three numbers which sum to zero. Give the best algorithm
+
 class Sum3Zero:
 
 	def __init__(self, array):
