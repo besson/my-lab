@@ -1,6 +1,7 @@
 from unittest import TestCase
+from algos.cipher import decipher
 
-class TestCipher:
+class TestCipher(TestCase):
 
 	def test_decipher_4_rounds(self):
 		message = decipher(7, 4, "1110100110")
