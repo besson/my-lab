@@ -1,7 +1,7 @@
 from unittest import TestCase
 from algos.pangram import is_valid
 
-class TestPangram:
+class TestPangram(TestCase):
 
 	def test_should_detect_pangram(self):
 		sentence = "We promptly judged antique ivory buckles for the next prize"
