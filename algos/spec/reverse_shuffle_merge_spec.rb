@@ -20,6 +20,12 @@ describe ReverseShuffleMerge do
     expect(subject.find(input)).to eq(output)
   end
 
+  it "test_case_3" do
+    input = "djjcddjggbiigjhfghehhbgdigjicafgjcehhfgifadihiajgciagicdahcbajjbhifjiaajigdgdfhdiijjgaiejgegbbiigida"
+    output = "aaaaabccigicgjihidfiejfijgidgbhhehgfhjgiibggjddjjd"
+    expect(subject.find(input)).to eq(output)
+  end
+
 end
 
 
